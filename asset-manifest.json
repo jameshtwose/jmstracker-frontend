@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/jmstracker-frontend/static/css/main.449954b2.css",
+    "main.js": "/jmstracker-frontend/static/js/main.cdf53373.js",
+    "static/js/787.b99fdcdc.chunk.js": "/jmstracker-frontend/static/js/787.b99fdcdc.chunk.js",
+    "index.html": "/jmstracker-frontend/index.html",
+    "main.449954b2.css.map": "/jmstracker-frontend/static/css/main.449954b2.css.map",
+    "main.cdf53373.js.map": "/jmstracker-frontend/static/js/main.cdf53373.js.map",
+    "787.b99fdcdc.chunk.js.map": "/jmstracker-frontend/static/js/787.b99fdcdc.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.449954b2.css",
+    "static/js/main.cdf53373.js"
+  ]
+}
