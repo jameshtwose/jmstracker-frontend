@@ -1,63 +1,62 @@
-import React, { useEffect, useState } from 'react'
-import './App.css'
+import "./App.css";
+import { useState } from "react";
 
 function App() {
+  const [foodType, setFoodType] = useState("");
+  const [amount, setAmount] = useState("");
+  const [message, setMessage] = useState("");
 
-  const [backendData, setBackendData] = useState([{}])
-
-  // useEffect(() => {
-  //   const requestOptions = {
-  //     method: 'GET',
-  //     mode: "cors",
-  //     // credentials: 'omit',
-  //     headers: {
-  //       "content-type": "application/json",
-  //       "Access-Control-Allow-Origin": "*",
-  //     }
-  //   };
-  //   fetch("https://4qcow4.deta.dev/all-foods", requestOptions).then(
-  //     response => response.json()
-  //     ).then(
-  //       data => {
-  //         setBackendData(data)
-  //       }
-  //     )
-  // }, [])
-
-  useEffect(() => {
-    const requestOptions = {
-      method: 'POST',
-      mode: "cors",
-      // credentials: 'omit',
-      headers: {
-        "content-type": "application/x-www-form-urlencoded",
-        "Access-Control-Allow-Origin": "*",
-      },
-        body: new URLSearchParams({food: "Chocolate", amount: "1.5"})
-    };
-    fetch("https://4qcow4.deta.dev/add", requestOptions).then(
-      response => response.json()
-      ).then(
-        data => {
-          setBackendData(data)
-        }
-      )
-  }, [])
+  let handleSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      let res = await fetch("https://4qcow4.deta.dev/add", {
+        method: "POST",
+        mode: "cors",
+        headers: {
+          "content-type": "application/x-www-form-urlencoded",
+          "Access-Control-Allow-Origin": "*",
+        },
+        body: new URLSearchParams({food: foodType, amount: amount}),
+      });
+      let resJson = await res.json();
+      if (res.status === 200) {
+        setFoodType("");
+        setAmount("");
+        setMessage("Food Type and Amount Sent successfully");
+      } else {
+        setMessage("Some error occured");
+      }
+    } catch (err) {
+      console.log(err);
+    }
+  };
 
   return (
-    <div>
+    
+    <div className="App">
 
-      {/* {
-          React.Children.toArray(
-              backendData.map(({ id, amount, food_type, created_at }) => 
-              <li>{food_type}: {amount}, date: {created_at}</li>
-              )
-          )
-      } */}
-      Sup
+      <form onSubmit={handleSubmit}>
+      <h1>JmsTracker Frontend</h1>
+      <br></br>
+        <input
+          type="text"
+          value={foodType}
+          placeholder="Food Type"
+          onChange={(e) => setFoodType(e.target.value)}
+        />
+        <input
+          type="text"
+          value={amount}
+          placeholder="Amount (per 100 grams)"
+          onChange={(e) => setAmount(e.target.value)}
+        />
 
+        <button type="submit">Create</button>
+
+        <div className="message">{message ? <p>{message}</p> : null}</div>
+      </form>
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
