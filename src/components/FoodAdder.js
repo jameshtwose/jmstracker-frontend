@@ -1,42 +1,12 @@
 import "../App.css";
 import { useEffect, useState } from "react";
+import FoodDropdown from "./FoodDropdown.js"
+
 
 function FoodAdder(props) {
   const [foodType, setFoodType] = useState("");
   const [amount, setAmount] = useState("");
   const [message, setMessage] = useState("");
-
-  const getFood = async () => {
-    try {
-      let res = await fetch("https://4qcow4.deta.dev/foods", {
-        method: "GET",
-        mode: "cors",
-        headers: {
-          "Authentication": `Bearer ${props.jwt}`, 
-          "content-type": "application/json",
-          "Access-Control-Allow-Origin": "*",
-        },
-      });
-      let resJson = await res.json();
-      if (res.status === 200) {
-        setFoodType("");
-        setAmount("");
-        setMessage(JSON.stringify(resJson));
-      } else {
-        setMessage("Some error occured");
-      }
-    } catch (err) {
-      console.log(err);
-    }
-  }
-
-  useEffect(() => {
-    if (!props.jwt){
-      setMessage("This is the saddest I have ever been!");
-      return () => {};
-    }
-    getFood();
-  }, [props.jwt]);
 
   let handleSubmit = async (e) => {
     e.preventDefault();
@@ -45,7 +15,7 @@ function FoodAdder(props) {
         method: "POST",
         mode: "cors",
         headers: {
-          "Authentication": `Bearer ${props.jwt}`, 
+          "Authorization": `Bearer ${props.jwt}`, 
           "content-type": "application/json",
           "Access-Control-Allow-Origin": "*",
         },
@@ -71,11 +41,16 @@ function FoodAdder(props) {
       <form onSubmit={handleSubmit}>
         <h1>JmsTracker Frontend</h1>
         <br></br>
-        <input
+        {/* <input
           type="text"
           value={foodType}
           placeholder="Food Type"
           onChange={(e) => setFoodType(e.target.value)}
+        /> */}
+        <FoodDropdown
+          value={foodType}
+          onChange={(value) => setFoodType(value)}
+          jwt={props.jwt}
         />
         <input
           type="text"
