@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/jmstracker-frontend/static/css/main.16b293bd.css",
-    "main.js": "/jmstracker-frontend/static/js/main.e364c58b.js",
+    "main.css": "/jmstracker-frontend/static/css/main.8f719523.css",
+    "main.js": "/jmstracker-frontend/static/js/main.1246d86a.js",
     "static/js/787.b99fdcdc.chunk.js": "/jmstracker-frontend/static/js/787.b99fdcdc.chunk.js",
     "index.html": "/jmstracker-frontend/index.html",
-    "main.16b293bd.css.map": "/jmstracker-frontend/static/css/main.16b293bd.css.map",
-    "main.e364c58b.js.map": "/jmstracker-frontend/static/js/main.e364c58b.js.map",
+    "main.8f719523.css.map": "/jmstracker-frontend/static/css/main.8f719523.css.map",
+    "main.1246d86a.js.map": "/jmstracker-frontend/static/js/main.1246d86a.js.map",
     "787.b99fdcdc.chunk.js.map": "/jmstracker-frontend/static/js/787.b99fdcdc.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.16b293bd.css",
-    "static/js/main.e364c58b.js"
+    "static/css/main.8f719523.css",
+    "static/js/main.1246d86a.js"
   ]
 }
