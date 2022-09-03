@@ -9,7 +9,7 @@ function App() {
   const [jwt, setJwt] = useState("");
   const handleJwt = (jwt) => {
     setJwt(jwt); 
-    localStorage.setItem("jwt", jwt);
+    // localStorage.setItem("jwt", jwt);
   };
   return (<div>{jwt ? <FoodAdder jwt={jwt}/> : <Login handleJwt={handleJwt}/>}</div>
           /* <div></div> */
