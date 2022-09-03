@@ -39,19 +39,15 @@ function FoodAdder(props) {
     <div className="FoodAdder">
 
       <form onSubmit={handleSubmit}>
-        <h1>JmsTracker Frontend</h1>
+        <h1>Add your food</h1>
+        <h4>(and the amount you ate per 100 grams)</h4>
         <br></br>
-        {/* <input
-          type="text"
-          value={foodType}
-          placeholder="Food Type"
-          onChange={(e) => setFoodType(e.target.value)}
-        /> */}
         <FoodDropdown
           value={foodType}
           onChange={(value) => setFoodType(value)}
           jwt={props.jwt}
         />
+        <br></br>
         <input
           type="text"
           value={amount}
