@@ -9,7 +9,7 @@ const Login = (props) => {
     let handleSubmit = async (e) => {
         e.preventDefault();
         try {
-          let res = await fetch("https://4qcow4.deta.dev/login", {
+          let res = await fetch("https://4qcow4.deta.dev/login/", {
             method: "POST",
             mode: "cors",
             headers: {

@@ -11,7 +11,7 @@ function FoodAdder(props) {
   let handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      let res = await fetch("https://4qcow4.deta.dev/foods", {
+      let res = await fetch("https://4qcow4.deta.dev/foods/", {
         method: "POST",
         mode: "cors",
         headers: {
@@ -22,7 +22,7 @@ function FoodAdder(props) {
         body: JSON.stringify({ food_type: foodType, amount: amount }),
       });
       let resJson = await res.json();
-      if (res.status === 200) {
+      if (res.status === 201) {
         setFoodType("");
         setAmount("");
         setMessage("Food Type and Amount Sent successfully");

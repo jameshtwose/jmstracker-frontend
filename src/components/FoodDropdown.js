@@ -13,7 +13,7 @@ const FoodDropdown = (props) => {
 
     const getFood = async () => {
         try {
-          let res = await fetch("https://4qcow4.deta.dev/foods", {
+          let res = await fetch("https://4qcow4.deta.dev/foods/", {
             method: "GET",
             mode: "cors",
             headers: {
