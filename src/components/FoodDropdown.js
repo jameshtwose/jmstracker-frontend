@@ -13,7 +13,7 @@ const FoodDropdown = (props) => {
 
     const getFood = async () => {
         try {
-          let res = await fetch("https://4qcow4.deta.dev/foods/", {
+          let res = await fetch("https://4qcow4.deta.dev/info/", {
             method: "GET",
             mode: "cors",
             headers: {
@@ -24,7 +24,7 @@ const FoodDropdown = (props) => {
           });
           let resJson = await res.json();
           if (res.status === 200) {
-            const foodTypeList = new Set(resJson.map(foodEntry => foodEntry.food_type));
+            const foodTypeList = new Set(resJson.map(foodEntry => foodEntry.product_name));
             setFoodType(Array.from(foodTypeList).map(food => ({value: food, label: food})));
             console.log(foodTypeList);
           } else {
