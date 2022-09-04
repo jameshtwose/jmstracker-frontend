@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/jmstracker-frontend/static/css/main.3ebe3a35.css",
-    "main.js": "/jmstracker-frontend/static/js/main.e185bc2d.js",
-    "static/js/787.b99fdcdc.chunk.js": "/jmstracker-frontend/static/js/787.b99fdcdc.chunk.js",
-    "index.html": "/jmstracker-frontend/index.html",
-    "main.3ebe3a35.css.map": "/jmstracker-frontend/static/css/main.3ebe3a35.css.map",
-    "main.e185bc2d.js.map": "/jmstracker-frontend/static/js/main.e185bc2d.js.map",
-    "787.b99fdcdc.chunk.js.map": "/jmstracker-frontend/static/js/787.b99fdcdc.chunk.js.map"
+    "main.css": "/static/css/main.3ebe3a35.css",
+    "main.js": "/static/js/main.20a7ac47.js",
+    "static/js/787.b99fdcdc.chunk.js": "/static/js/787.b99fdcdc.chunk.js",
+    "index.html": "/index.html",
+    "main.3ebe3a35.css.map": "/static/css/main.3ebe3a35.css.map",
+    "main.20a7ac47.js.map": "/static/js/main.20a7ac47.js.map",
+    "787.b99fdcdc.chunk.js.map": "/static/js/787.b99fdcdc.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.3ebe3a35.css",
-    "static/js/main.e185bc2d.js"
+    "static/js/main.20a7ac47.js"
   ]
 }
