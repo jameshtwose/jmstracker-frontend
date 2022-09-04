@@ -2,6 +2,6 @@
 Using node to create a frontend for the jmstracker
 
 The frontend can be found here:
-https://jameshtwose.github.io/jmstracker-frontend/
+https://trckr.jms.rocks
 
-If you want a login please reach out as there is no create user page here.
+If you want a login please reach out as there is no create user page yet.
